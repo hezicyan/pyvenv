@@ -137,22 +137,23 @@ function pyvenv() {
     return
   fi
 
-  if [[ $VIRTUAL_ENV != "" ]]; then
-    local invenv=1
-  else
-    local invenv=0
-  fi
+  # if [[ $VIRTUAL_ENV != "" ]]; then
+  #   local invenv=1
+  # else
+  #   local invenv=0
+  # fi
 
   if [[ $len = "1" ]]; then
-    if [[ $invenv = 1 ]]; then
-      local -r selected=$len
-    else
-      local -r selected=0
-    fi
+    # if [[ $invenv = 1 ]]; then
+    #   local -r selected=$len
+    # else
+    #   local -r selected=0
+    # fi
+    local -r selected=0
   else
-    if [[ $invenv = 1 ]]; then
-      list=("${list[@]}" "Deactivate")
-    fi
+    # if [[ $invenv = 1 ]]; then
+    #   list=("${list[@]}" "Deactivate")
+    # fi
     echo "$len Python interpreters detected, please choose one of them:"
     echo ""
     _select_option "${list[@]}"
